@@ -709,6 +709,11 @@ h2 {letter-spacing: -0.02em;}
             border-bottom: 7px solid #fff;}
 
 
+.body_inner {min-height:100%; height:auto !important; height:100%; position: relative;}
+.footer-padding {height: 133px;}
+.body_inner .footer {position: absolute; left: 0; bottom: 0; width: 100%;}
+
+
 /*----------------------------
  mobile style
 ----------------------------*/
