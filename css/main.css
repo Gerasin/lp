@@ -650,11 +650,13 @@ h2 {letter-spacing: -0.02em;}
             .tabs-table th {font-weight: normal; color: #a7abb1;}
             .tabs-table td {border-top: 1px solid #ebebeb; color: #222;padding: 20px 0px 18px 30px !important;}
             .tabs-table th, .tabs-table td {font-size: 14px; padding: 10px 0px 3px 30px; text-align: left; vertical-align: top;}
+            .tabs-table tr:nth-child(even) td {background: #fdfdfd;}
             .tabs-table .first {padding-left: 20px !important;}
             .tabs-table .last {padding-bottom: 5px !important;padding-top: 14px !important;}
             .tabs-table .align-right {text-align: right;}
             body .lnk-border {border-bottom: 1px solid #3795c4; text-decoration: none; color: #222;}
-            body .lnk-border:hover {border-color: transparent;}
+            body .lnk-dashed {border-bottom: 1px dashed #3795c4; text-decoration: none; color: #222;}
+            body .lnk-border:hover, body .lnk-dashed:hover {border-color: transparent;}
             body .btn-confirmation {
                 display: inline-block;
                 white-space: nowrap;
@@ -663,9 +665,9 @@ h2 {letter-spacing: -0.02em;}
                 padding: 4px 7px;
                 background: #19a589;
                 margin: 0 17px 6px -7px;
-                -webkit-border-radius: 3px;
-                -moz-border-radius: 3px;
-                border-radius: 3px;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                border-radius: 4px;
                 position: relative;
                 vertical-align: top;
                 }
@@ -712,6 +714,58 @@ h2 {letter-spacing: -0.02em;}
 .body_inner {min-height:100%; height:auto !important; height:100%; position: relative;}
 .footer-padding {height: 133px;}
 .body_inner .footer {position: absolute; left: 0; bottom: 0; width: 100%;}
+
+.deal-txt {float: left; width: 45%;/* max-width: 500px; */padding-right: 4%;}
+    .table-header {font-size: 24px; margin: 0 0 11px;}
+    .deal-date {color: #a7abb1; padding: 0 0 16px; margin: -21px 0 0; font-size: 14px;}
+    .table-deal {width: 100%; margin: 0 0 39px;}
+        .table-deal td {padding: 0 0 10px; font-size: 14px; line-height: 16px;vertical-align: top;}
+        .table-deal td.td-first {width: 202px;} 
+            .td-border {background: url(../img/border.gif) 0 100% repeat-x; margin-right: 5px;}
+                .td-border span {background: #eceef0; padding-right: 5px;}
+    .table-order {width: 100%; max-width: 370px; margin: 0 0 38px; font-size: 14px;}
+        .table-order th {font-weight: normal; color: #a7abb1; padding: 0px 10px 9px 0; border-bottom: 1px solid #a7abb1; text-align: left;line-height: 12px;}
+        .table-order td {padding: 14px 10px 0 0; font-size: 14px; line-height: 16px;}
+        .table-order th.last, .table-order td.last {width: 70px; padding-right: 0;}
+.status-txt {float: right; width: 51%; font-size: 14px;padding: 56px 0 0;}
+    .status-bg {width: 453px;
+        background-color: #fff;
+        padding: 22px 20px 26px 28px;
+        margin: 0 0 30px;
+        -webkit-border-radius: 4px;
+        -moz-border-radius: 4px;
+        border-radius: 4px;
+        -webkit-box-shadow: 0 1px 11px rgba(0,0,0,.12);
+        -moz-box-shadow: 0 1px 11px rgba(0,0,0,.12);
+        box-shadow: 0 1px 11px rgba(0,0,0,.12);
+    }
+    .status-bg-big {width: auto;}
+        .status-bg p {margin: 0; font-size: 14px; line-height: 17px;}
+        .status-header {font-size: 24px; padding: 0 0 8px;}
+        .status-btn {padding: 16px 0 14px;}
+            .status-btn .btn-confirmation {margin: 0 20px 10px 0; padding: 4px 19px;}
+            .status-btn .btn-confirmation-red {padding: 4px 9px;}
+        .protection_deals {font-size: 18px; margin: 0 0 10px;}
+            .protection_deals .lnk-dashed {margin-left: 28px; position: relative; font-size: 14px;}
+                .protection_deals .lnk-dashed:before {position: absolute; content: ' '; left: -15px; top: 1px; border-left: 1px solid #ccc; height: 15px;}
+.status-history {padding: 0 0 0 7px;}
+    .status-history .status-header {padding: 0 0 7px 18px;}
+    .status-history-h {padding: 11px 0 10px; font-size: 18px;}
+        .status-history-h span {display: inline-block; width: 20px; color: #a7abb1;}
+        .status-history-h a {border-bottom: 1px solid #3795c4; text-decoration: none; color: #222;}
+        .status-history-h a:hover {border-color: transparent;}
+        .status-history .table-deal {margin: 0;}
+        .status-history .table-deal td {width: auto;}
+        .status-history .table-deal td.table-date {width: 123px;}
+        .status-cont-txt {padding-left: 20px;}
+    .status-comment {}
+        .status-comment p {margin: 0 0 7px;}
+        .status-comment a {border-bottom: 1px solid #3795c4; color: #222; text-decoration: none;}
+        .status-comment a:hover {border-color: transparent;}
+    .status-comment-btn {
+    padding: 10px 0 5px;
+}
+        .status-comment-btn a.btn-confirmation {color: #fff; border: 0; margin: 0 20px 0 0; padding: 4px 9px;} 
 
 
 /*----------------------------
