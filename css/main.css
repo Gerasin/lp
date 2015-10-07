@@ -100,6 +100,7 @@ textarea {
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
+html {height: 100%;}
 body {font: 16px 'pragmaticalightcregular'; color: #222;}
 h2 {font-weight: normal;}
 
@@ -715,7 +716,7 @@ h2 {letter-spacing: -0.02em;}
 .footer-padding {height: 133px;}
 .body_inner .footer {position: absolute; left: 0; bottom: 0; width: 100%;}
 
-.deal-txt {float: left; width: 45%;/* max-width: 500px; */padding-right: 4%;}
+.deal-txt {float: left; width: 45%; padding-right: 4%;}
     .table-header {font-size: 24px; margin: 0 0 11px;}
     .deal-date {color: #a7abb1; padding: 0 0 16px; margin: -21px 0 0; font-size: 14px;}
     .table-deal {width: 100%; margin: 0 0 39px;}
@@ -766,6 +767,120 @@ h2 {letter-spacing: -0.02em;}
     padding: 10px 0 5px;
 }
         .status-comment-btn a.btn-confirmation {color: #fff; border: 0; margin: 0 20px 0 0; padding: 4px 9px;} 
+
+.page-form {}
+    .header-h1 {font-size: 36px; margin: 0 0 24px; text-align: center;}
+    .form-content {width: 670px; margin: 0 auto;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;
+    background-color: #fff;
+    -webkit-box-shadow: 0 1px 11px rgba(0,0,0,.12);
+    -moz-box-shadow: 0 1px 11px rgba(0,0,0,.12);
+    box-shadow: 0 1px 11px rgba(0,0,0,.12);}
+    .form-h2 {background: #fdfdfd; font-size: 24px; padding: 19px 0 20px; border-bottom: 1px solid #ebebeb; border-top: 1px solid #ebebeb; margin: 17px 0 24px;}
+    .form-h2-first {border-top: 0;margin-top: 0;padding: 16px 0 13px;} 
+        .form-h2 span {display: inline-block; width: 32px; padding: 0 0 0 20px; color: #a7abb1;}
+    .form-item {padding: 0 48px 0 50px;}   
+        .form-h3 {padding: 0 0 6px; font-size: 18px; position: relative;}
+        .form-mes {position: absolute; top: 1px; left: -29px; cursor: pointer; background: url(../img/ico-message.png) 0 0 no-repeat; width: 17px; height: 17px;}
+            .form-mes span {position: absolute; position: absolute; bottom: 22px; left: -28px; display: none; background-color: #fff; z-index: 20; padding: 10px 14px; width: 245px; font-size: 14px; line-height: 16px;
+                -webkit-border-radius: 4px;
+                -moz-border-radius: 4px;
+                border-radius: 4px;
+                -webkit-box-shadow: 0 0 24px rgba(84,111,124,.4);
+                -moz-box-shadow: 0 0 24px rgba(84,111,124,.4);
+                box-shadow: 0 0 24px rgba(84,111,124,.4);}
+                .form-mes span:before {position: absolute; content: ' '; bottom: -7px; left: 28px;
+                    border-left: 7px solid transparent;
+                    border-right: 7px solid transparent;
+                    border-top: 7px solid #fff;}
+        .form-inp {padding: 0 0 24px;}
+            .form-inp label {margin-right: 18px;}
+        .form-column {width: 272px; float: left;}
+        .column-right {float: right;}
+        .form-inp-pad {padding-top: 11px;}
+        .form-inp-comment {display: inline-block; height: 40px; line-height: 40px; padding: 0 0 0 15px; font-size: 18px;}
+        .delivery_time {width: 201px;}
+            .delivery_time .inp-style {width: 100px;}
+        .check_order {width: 345px;}
+            .check_order .inp-style {width: 100px;}
+        .order-column {width: 272px;}
+            .order-column .inp-style {width: 202px;} 
+        .form-btn {padding: 12px 0 50px 52px;}
+
+.pay-info-left {float: left; width: 732px;}
+    .pay-info-left .tabs-lnk li a {padding-left: 30px; padding-right: 30px;}
+    .pay-info-left .tabs-item {padding-top: 25px;}
+    .pay-info-left .form-item {padding: 0 30px;}
+    .form-item-width {float: left; margin-right: 30px; width: 172px;}
+    .form-item-bik {width: 140px;}
+    .form-item-r-s {width: 374px;}
+    .button-lnk {float: left; height: 40px; line-height: 40px; padding: 0 50px 0 0; font-size: 18px; display: inline-block;}
+    .pay-info-left .form-btn {padding: 0 0 50px 30px;}
+    .form-item-r_s {width: 374px;}
+
+.pay-info-right {float: right; width: 370px;padding: 8px 0 0;}
+    .pay-info-h {border-bottom: 1px solid #a7abb1; padding: 0 0 16px; margin: 0 0 22px; font-size: 24px; line-height: 25px;}
+    .pay-info-lnk {margin: 0; padding: 0;}
+        .pay-info-lnk li {list-style: none; padding: 0 0 16px; font-size: 18px;}
+            .pay-info-lnk li a {text-decoration: none; color: #222; border-bottom: 1px dashed #3795c4;}
+            .pay-info-lnk li a:hover {border-color: transparent;}
+.form-content-pay {padding: 32px 0 0;}
+.form-content-pay .form-inp label {margin-right: 57px;}
+.pay-total {font-size: 24px; padding-top: 5px;}
+    .pay-total span {font-size: 36px;}
+.form-hide-2 {display: none;}
+
+
+
+
+.inp-style {
+    height: 42px;
+    background-color: #fff;
+    border: solid 1px #ebebeb;
+    vertical-align: middle;
+    padding-left: 10px;
+    outline: none;
+    font: 18px 'pragmaticalightcregular';
+    color: #222;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    }
+.textarea-style {
+    padding: 10px 10px;
+    height: 52px;
+    background-color: #fff;
+    border: solid 1px #ebebeb;
+    vertical-align: middle;
+    padding-left: 10px;
+    outline: none;
+    font: 18px 'pragmaticalightcregular';
+    color: #222;
+    width: 100%;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+    }
+.color_red {color: #e11b1b;}
+.color_gray {color: #a7abb1;}
+
+input[type="checkbox"]{display:none;}
+input[type="checkbox"] + label{cursor: pointer;}
+input[type="checkbox"] + label::before{content: ""; display: inline-block; height: 16px; width: 16px; margin: 1px 7px 0 0; background: url("../img/checkbox.png") no-repeat -23px 0; vertical-align: text-top; background-position: -23px 0;}
+input[type="checkbox"]:checked + label::before {background-position: 0 0;}
+
+input[type="radio"]{display:none;}
+input[type="radio"] + label{cursor: pointer; display: inline-block;}
+input[type="radio"] + label::before{content: ""; display: inline-block; height: 16px; width: 16px; margin: 1px 7px 0 0; background: url("../img/radio.png") no-repeat 0 0; vertical-align: text-top; background-position: -23px 0;}
+input[type="radio"]:checked + label::before {background-position: 0 0;}
+
+.button-style {display: inline-block; outline: none; background: #18a689; color: #fff; height: 40px; line-height: 40px; border: 0; padding: 0 40px; font: normal 18px 'pragmaticalightcregular'; 
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+    border-radius: 4px;}
 
 
 /*----------------------------

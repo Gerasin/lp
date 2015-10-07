@@ -270,11 +270,40 @@ $(document).ready(function(){
    	}, function(e){
    		$('.tooltip-popup').stop().fadeOut();
    	});
+   	$('.form-mes').hover(function(e){
+   		$(this).find('span').stop().fadeIn();
+   	}, function(e){
+   		$(this).find('span').stop().fadeOut();
+   	});
+
    	$('.tooltip').mousemove(function(e){
    		var offset = $(this).offset();
    		var relativeX = e.pageX - 20;
         var relativeY = e.pageY + 35;
         $('.tooltip-popup').css({'left' : relativeX, 'top' : relativeY});
+   	});
+
+
+   	// tabs 
+   	$('.tabs-item:not(:first)').hide();
+   	$('.tabs-lnk a').click(function(){
+   		var index = $(this).parents('li').index();
+   		$('.tabs-lnk li').removeClass('active');
+   		$(this).parents('li').addClass('active');
+   		$('.tabs-item').hide();
+   		$('.tabs-item').eq(index).show();
+   		return false;
+   	});
+
+   	// Выбор радио
+   	$('input').click(function(){
+   		if($('.js-radio-check').prop("checked")) {
+   			$('.form-hide-1').hide();
+   			$('.form-hide-2').show();
+   		} else {
+   			$('.form-hide-2').hide();
+   			$('.form-hide-1').show();
+   		};
    	});
 
 
