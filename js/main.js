@@ -306,6 +306,35 @@ $(document).ready(function(){
    		};
    	});
 
+   	// select
+   	$('select').selectize({
+    	create: true,
+    	sortField: 'text'
+	});
+
+	// file input
+	$('.lnk-file').click(function(){
+		$(this).parents('.form-item').find('.lnk-file-inp').click();
+		return false;
+	});
+
+	// password
+	$('.pass-ico').click(function(){
+		if($(this).hasClass('active')) {
+			$('.password-box').show();
+			$('.password-inp-box').hide();
+			var password = $('.password-inp-box input').val();
+			$('.password-box input').val(password);
+			$(this).removeClass('active');
+		} else {
+			$('.password-box').hide();
+			$('.password-inp-box').show();
+			var password = $('.password-box input').val();
+			$('.password-inp-box input').val(password);
+			$(this).addClass('active');
+		};
+		return false;
+	})
 
 
 

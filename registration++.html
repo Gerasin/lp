@@ -35,36 +35,35 @@
             </div>
         </div>
         <div class="page-content page-form">
-            <div class="header-h1">Оплата сделки</div>
-            <div class="form-content form-content-pay">
-                
+            <div class="header-h1">Регистрация нового аккаунта</div>
+            <div class="form-content form-content-reg">
                 <div class="form-item">
-                    <div class="form-h3">Выберите способ оплаты</div>
-                    <div class="form-inp form-inp-pad">
-                        <input type="radio" name="radio_name" id="radio_1" checked hidden><label for="radio_1">Банковский перевод</label>
-                        <input type="radio" name="radio_name" id="radio_2" class="js-radio-check"><label for="radio_2">Банковская карта</label>
-                    </div>
-                    <div class="form-hide-1">
-                        <div class="form-h3">Сумма к оплате</div>
-                        <div class="form-inp pay-total">
-                            <span>879 500</span> руб.
-                        </div>
-                    </div>
-                    <div class="form-hide-2">
-                        <div class="form-h3">Стоимость сделки + комиссия</div>
-                        <div class="form-inp pay-total">
-                            879 500 руб. + 8420 руб.
-                        </div>
-                        <div class="form-h3">Сумма к оплате</div>
-                        <div class="form-inp pay-total">
-                            <span>881 520</span> руб.
-                        </div>
-                    </div>
-                    
+                    <div class="form-h3">Электронная почта <sapn class="color_red">*</sapn></div>
+                    <div class="form-inp inp-ok"><input type="text" class="inp-style" value="my_mail@gmail.com"></div>
                 </div>
-                
-                <div class="form-btn"><button class="button-style">Оплатить сделку</button></div>
+                <div class="form-item">
+                    <div class="form-h3">Имя пользователя <sapn class="color_red">*</sapn></div>
+                    <div class="form-inp"><input type="text" class="inp-style"><div class="form-inp-com">Так вас будут видеть другие пользователи</div></div>
+                </div>
+                <div class="form-item">
+                    <div class="form-h3">Пароль <sapn class="color_red">*</sapn></div>
+                    <div class="form-inp form-inp-pass">
+                        <a href="" class="pass-ico"></a>
+                        <div class="password-box"><input type="password" class="inp-style" value="password"></div>
+                        <div class="password-inp-box"><input type="text" class="inp-style" value="password"></div>
+                    </div>
+                </div>
+                <div class="form-item input-error">
+                    <div class="form-h3">Повторите пароль <sapn class="color_red">*</sapn></div>
+                    <div class="form-inp input-error"><input type="password" class="inp-style" value="password111"><div class="error-mes">Пароли не совпадают</div></div>
+                </div>
+                <div class="form-btn"><button class="button-style">Зарегистри роваться</button></div>
                 <div class="clearfix"></div>
+            </div>
+            <div class="content-reg-txt">
+                Уже зарегистрированы? <a href="" class="lnk-border">Войти</a>
+                <div class="reg-txt-border"></div>
+                <a href="" class="lnk-border">Не получили письмо с подтверждением?</a>
             </div>
         </div>
 
@@ -101,6 +100,7 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+        <script src="js/selectize.min.js" type="text/javascript"></script>
         <script src="js/plugins.js"></script>
         <script src="js/slick.min.js"></script>
         <script src="js/main.js"></script>

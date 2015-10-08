@@ -35,35 +35,32 @@
             </div>
         </div>
         <div class="page-content page-form">
-            <div class="header-h1">Оплата сделки</div>
-            <div class="form-content form-content-pay">
-                
+            <div class="header-h1">Подать претензию</div>
+            <div class="form-content form-content-pad">
                 <div class="form-item">
-                    <div class="form-h3">Выберите способ оплаты</div>
-                    <div class="form-inp form-inp-pad">
-                        <input type="radio" name="radio_name" id="radio_1" checked hidden><label for="radio_1">Банковский перевод</label>
-                        <input type="radio" name="radio_name" id="radio_2" class="js-radio-check"><label for="radio_2">Банковская карта</label>
+                    <div class="form-h3">Причина претензии</div>
+                    <div class="form-sel">
+                        <select name="" id="">
+                            <option value="1">претензия</option>
+                            <option value="2">претензия</option>
+                            <option value="3">претензия</option>
+                            <option value="4">претензия</option>
+                        </select>
                     </div>
-                    <div class="form-hide-1">
-                        <div class="form-h3">Сумма к оплате</div>
-                        <div class="form-inp pay-total">
-                            <span>879 500</span> руб.
-                        </div>
-                    </div>
-                    <div class="form-hide-2">
-                        <div class="form-h3">Стоимость сделки + комиссия</div>
-                        <div class="form-inp pay-total">
-                            879 500 руб. + 8420 руб.
-                        </div>
-                        <div class="form-h3">Сумма к оплате</div>
-                        <div class="form-inp pay-total">
-                            <span>881 520</span> руб.
-                        </div>
-                    </div>
-                    
                 </div>
-                
-                <div class="form-btn"><button class="button-style">Оплатить сделку</button></div>
+                <div class="form-item">
+                    <div class="form-h3"><a href="" class="lnk-dashed lnk-file">Прикрепить файл</a></div>
+                    <div class="form-sel">
+                        <input type="file" class="lnk-file-inp">
+                    </div>
+                </div>
+                <div class="form-item">
+                    <div class="form-h3">Комментарий для продавца</div>
+                    <div class="form-inp">
+                        <textarea name="" id="" cols="30" rows="10" class="textarea-style textarea-comment"></textarea>
+                    </div>
+                </div>
+                <div class="form-btn"><button class="button-style">Уведомить продавца</button></div>
                 <div class="clearfix"></div>
             </div>
         </div>
@@ -101,6 +98,7 @@
 
         <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+        <script src="js/selectize.min.js" type="text/javascript"></script>
         <script src="js/plugins.js"></script>
         <script src="js/slick.min.js"></script>
         <script src="js/main.js"></script>
