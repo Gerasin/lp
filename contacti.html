@@ -1,0 +1,194 @@
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <title>Name</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <link rel="shortcut icon" href="favicon.ico" />
+
+        <link rel="stylesheet" href="css/main.css">
+        
+    </head>
+    <body class="body_inner">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+
+        <div class="head">
+            <div class="wr">
+                <div class="logo"><a href="/"><img src="img/logo.png" alt=""></a></div>
+                <ul class="menu-head">
+                    <li><a href="" class="menu-one">О сервисе</a></li>
+                    <li><a href="">F.A.Q.</a></li>
+                    <li><a href="">Контакты</a></li>
+                </ul>
+                <a href="" class="mobile-menu"></a>
+                <div class="head-button">
+                    <a href="" class="btn-style-inner btn-white lnk-dashed">Вход</a>
+                    <div class="head-button-border"></div>
+                    <a href="" class="btn-style-inner btn-white">Регистрация</a>
+                </div>
+            </div>
+        </div>
+        <div id="map" class="page-contacts map">
+
+            <div class="contacts-txt">
+                <h1>Контакты</h1>
+                <p>ООО «СэйфКроу» <br>
+                Москва, 123022, Москва, Рочдельская ул., д. 15 стр. 25</p>
+                <p>+4 (495) 658-58-95, по будням с 10:00 до 19:00</p>
+                <p><a href="mailto:contact@safecrow.ru">contact@safecrow.ru</a></p>
+            </div>
+        </div>
+
+        <div class="form-message form-message-error">Ошибка. Электронная почта или телефон указан неверно</div>
+        <div class="form-message form-message-ok">Ваше сообщение отправлено</div>
+
+        <div class="footer-padding"></div>
+        <div class="footer">
+            <div class="wr">
+                <ul class="footer-menu">
+                    <li><a href="">О сервисе </a></li>
+                    <li><a href="">F.A.Q.</a></li>
+                    <li><a href="">Контакты</a></li>
+                    <li><a href="">Настройки профиля</a></li>
+                </ul>
+                <div class="footer-baner">
+                    <span><img src="img/f-ban-1.png" alt=""></span>
+                    <span><img src="img/f-ban-2.png" alt=""></span>
+                </div>
+                <div class="clearfix"></div>
+                <div class="footer-cont">
+                    <span><img src="img/ico-phone.png" alt=""> 8 (800) 000 2545</span>
+                    <span><img src="img/ico-email.png" alt=""> <a href="mailto:info@safecrow.ru">info@safecrow.ru</a></span>
+                    <span><img src="img/ico-adres.png" alt=""> 1230002, Москва, ул. Рочдельская, д.12 стр. 2</span>
+                </div>
+            </div>
+        </div><!-- footer -->
+
+        <div class="tooltip-popup">В настоящий момент от вас не требуется никаких действий</div>
+
+        
+        
+        <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.3.min.js"><\/script>')</script>
+        <script src="http://api-maps.yandex.ru/2.0/?load=package.standard&lang=ru-RU" type="text/javascript"></script>
+        <script src="js/selectize.min.js" type="text/javascript"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/slick.min.js"></script>
+
+        <script src="js/main.js"></script>
+
+
+        <script type="text/javascript">
+        ymaps.ready(init);
+
+        function init () {
+            var myMap = new ymaps.Map('map', {
+                    center: [55.756088, 37.561526],
+                    zoom: 17,
+                }),
+
+                counter = 0,
+
+                // Создание макета содержимого балуна.
+                // Макет создается с помощью фабрики макетов с помощью текстового шаблона.
+                BalloonContentLayout = ymaps.templateLayoutFactory.createClass(
+                    '', {
+
+                            
+                });
+
+            var placemark = new ymaps.Placemark([55.755388, 37.561526], {
+                   
+                }, {
+                    balloonContentLayout: BalloonContentLayout,
+
+                    iconLayout: 'default#image',
+                    iconImageHref: 'img/marker.png',
+                    iconImageSize: [71, 74],
+                    iconImageOffset: [-25, -85]
+                });
+
+
+            myMap.geoObjects.add(placemark, {width: 700});
+
+
+                // Создадим пользовательский макет ползунка масштаба.
+                ZoomLayout = ymaps.templateLayoutFactory.createClass("<div>" +
+                        "<div id='zoom-in' class='btn'><i class='icon-plus'></i></div><br>" +
+                        "<div id='zoom-out' class='btn'><i class='icon-minus'></i></div>" +
+                    "</div>", {
+
+                    // Переопределяем методы макета, чтобы выполнять дополнительные действия
+                    // при построении и очистке макета.
+                    build: function () {
+                        // Вызываем родительский метод build.
+                        ZoomLayout.superclass.build.call(this);
+
+                        // Привязываем функции-обработчики к контексту и сохраняем ссылки
+                        // на них, чтобы потом отписаться от событий.
+                        this.zoomInCallback = ymaps.util.bind(this.zoomIn, this);
+                        this.zoomOutCallback = ymaps.util.bind(this.zoomOut, this);
+
+                        // Начинаем слушать клики на кнопках макета.
+                        $('#zoom-in').bind('click', this.zoomInCallback);
+                        $('#zoom-out').bind('click', this.zoomOutCallback);
+                    },
+
+                    clear: function () {
+                        // Снимаем обработчики кликов.
+                        $('#zoom-in').unbind('click', this.zoomInCallback);
+                        $('#zoom-out').unbind('click', this.zoomOutCallback);
+
+                        // Вызываем родительский метод clear.
+                        ZoomLayout.superclass.clear.call(this);
+                    },
+
+                    zoomIn: function () {
+                        var map = this.getData().control.getMap();
+                        // Генерируем событие, в ответ на которое
+                        // элемент управления изменит коэффициент масштабирования карты.
+                        this.events.fire('zoomchange', {
+                            oldZoom: map.getZoom(),
+                            newZoom: map.getZoom() + 1
+                        });
+                    },
+
+                    zoomOut: function () {
+                        var map = this.getData().control.getMap();
+                        this.events.fire('zoomchange', {
+                            oldZoom: map.getZoom(),
+                            newZoom: map.getZoom() - 1
+                        });
+                    }
+                }),
+
+                zoomControl = new ymaps.control.SmallZoomControl({
+                    layout: ZoomLayout
+                });
+
+           
+
+
+        }
+
+        </script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+            function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+            e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+            e.src='https://www.google-analytics.com/analytics.js';
+            r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+            ga('create','UA-XXXXX-X','auto');ga('send','pageview');
+        </script>
+    </body>
+</html>

@@ -307,10 +307,12 @@ $(document).ready(function(){
    	});
 
    	// select
-   	$('select').selectize({
-    	create: true,
-    	sortField: 'text'
-	});
+   	if($('select').length) {
+	   	$('select').selectize({
+	    	create: true,
+	    	sortField: 'text'
+		});
+   	};
 
 	// file input
 	$('.lnk-file').click(function(){
@@ -334,8 +336,55 @@ $(document).ready(function(){
 			$(this).addClass('active');
 		};
 		return false;
-	})
+	});
 
 
+	// neww password
+	$('.edit-pass-open').click(function(){
+		$('.form-inp').addClass('active');
+		$('.pass-edit').slideDown();
+		return false;
+	});
+	$('.edit-pass-close').click(function(){
+		$('.form-inp').removeClass('active');
+		$('.pass-edit').slideUp();
+		return false;
+	});
+
+	// about
+	$('.about-help-h a').click(function(){
+		$(this).parents('.about-help').find('.about-help-cont').slideToggle();
+		return false;
+	});
+
+	$('.about-box-menu a').click(function(){
+		var anchor = $(this);
+      	$('html, body').stop().animate({
+         	scrollTop: $(anchor.attr('href')).offset().top
+      	}, 1000);
+		return false;
+	});
+
+	if($('.about-box-menu').length) {
+		aboutMenu = $('.about-box-menu').offset().top - 20
+	};
+
+	var heightContPad = $('.head').height() + $('.footer').height();
+	var heightContact = $(window).height() - heightContPad;
+	// $('.page-contacts').height(heightContact);
+
+});
+
+var aboutMenu;
+
+$(window).scroll(function(){
+
+
+	var scrollTop = $(window).scrollTop();
+	if(scrollTop > aboutMenu) {
+		$('.about-box-menu').addClass('active');
+	} else {
+		$('.about-box-menu').removeClass('active');
+	};
 
 });
