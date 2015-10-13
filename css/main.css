@@ -114,7 +114,7 @@ h2 {letter-spacing: -0.02em;}
     -moz-border-radius: 4px;
     border-radius: 4px;}
 .btn-blue {background: #3c7dc1; color: #fff;}
-.btn-blue:hover {background: #3370b0; color: #fff;}
+.btn-blue:hover {background: #3370b0; color: #fff; }
 .btn-blue:active {background: #4f90d5; color: #fff;}
 
 .btn-white {background: #e6e6e6; color: #022222;}
