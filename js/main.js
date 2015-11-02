@@ -12,47 +12,7 @@ $(document).ready(function(){
 		menuSL = 0;
 	};
 
-	if($('.sl_2-item').length > 0) {
-		var slPos = $('.sl_2-item').offset();
-		slPos = slPos.top - 50;
-		if($(window).width() < 980) { slPos = slPos.top + 30 };
-		var positBot = 0;
-		var slItem = 0;
-		var slTime = 0;
-
-		$(window).scroll(function(){
-
-			if(menuSL == 0) {
-				var slPosBody = $(window).scrollTop();
-				
-				if(slPosBody > slPos) {
-					if($('.sl_2-item-5').hasClass('slick-active')) {
-						if(slTime == 0) {
-							$('body, html').scrollTop(slPos);
-							setTimeout(slTimeFun, 1000);
-						};
-					} else {
-						$('body, html').scrollTop(slPos);
-						$('.sl_2-slider .slick-next').click();
-						positBot = 1;
-						slTime = 0;
-					}
-				};
-				var slPosMax = slPos + 100;
-					
-				if(slPosBody < slPos && positBot == 1) {
-					if($('.sl_2-item-1').hasClass('slick-active')) {
-						positBot = 0;
-					} else {
-						$('body, html').scrollTop(slPos);
-						$('.sl_2-slider .slick-prev').click();
-					}
-				}
-			};
-
-
-		});
-	};
+	
 
 
 	// Карусель "Как это работает"
@@ -60,8 +20,8 @@ $(document).ready(function(){
   		infinite: true,
   		slidesToShow: 1,
   		slidesToScroll: 1,
-  		autoplay: false,
-  		autoplaySpeed: 4000,
+  		autoplay: true,
+  		autoplaySpeed: 3500,
   		dots: true,
   		adaptiveHeight: true,
   		responsive: [
